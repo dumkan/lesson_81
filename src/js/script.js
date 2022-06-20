@@ -9,3 +9,11 @@ hamburger.addEventListener('click', () => {
 closeElem.addEventListener('click', () => {
     menu.classList.remove('active');
 });
+
+// автоматческий пересчет процентов
+const counters = document.querySelectorAll('.skills__percentage'),
+      lines = document.querySelectorAll('.skills__bar-percentage');
+
+counters.forEach((item, i) => {
+    lines[i].style.width = item.innerHTML;
+});
