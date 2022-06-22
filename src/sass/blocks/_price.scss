@@ -5,20 +5,25 @@
     }
     &__wrapper {
         margin-top: 60px;
+        padding: 0 60px;
         display: grid;
-        grid-template: repeat(3, 44px) / repeat(2, 370px);
-        grid-gap: 15px;
+        grid-template: repeat(3, minmax(45px, auto)) / repeat(2, 370px);
+        row-gap: 15px;
         justify-content: space-between;
     }
     &__item {
-        display: grid;
         position:relative;
-        grid-template: repeat(2, 1fr) / 300px 100px;
-        justify-content: center;
+        display: grid;
+        grid-template: repeat(2, minmax(21px, auto)) / repeat(2, auto);
+        row-gap: 5px;
+        @include before_circle-small;
+        &:before {
+            top: 12px;
+            left: -25px;
+        }
         
     }
     &__descr {
-        padding-left: 25px;
         font-size: 12px;
         line-height: 18px;
         font-weight: 500;
@@ -28,16 +33,11 @@
         font-size: 14px;
         line-height: 21px;
         font-weight: 700;
-        padding-left: 25px;
-        @include before_circle-small;
-        &:before {
-            top: 12px;
-            left: -12px;
-        }
     }
     &__value {
         font-size: 14px;
         line-height: 21px;
         font-weight: 700;
+        justify-self: end;
     }
 }
